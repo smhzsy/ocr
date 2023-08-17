@@ -8,6 +8,9 @@ packages = [{include = "ocr_pj"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+pytesseract = "^0.3.10"
+fastapi = "^0.101.1"
+uvicorn = "^0.23.2"
 
 
 [build-system]

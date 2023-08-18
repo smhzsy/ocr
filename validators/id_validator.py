@@ -14,6 +14,11 @@ dont_accept_values = (
 
 
 def IsValidID(tckn: str) -> bool:
+    """
+    Checking if the ID number is valid.
+    :param tckn: ID to check.
+    :return: bool
+    """
     if tckn in dont_accept_values:
         return False
     if len(tckn) != 11:

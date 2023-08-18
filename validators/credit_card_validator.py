@@ -1,4 +1,9 @@
-def luhn_check(card_number):
+def luhn_check(card_number: str) -> bool:
+    """
+    Validating the Credit Card number with Luhn algorithm.
+    :param card_number: The card number to check.
+    :return: bool
+    """
     card_number = card_number.replace(" ", "")
     if not card_number.isdigit():
         return False

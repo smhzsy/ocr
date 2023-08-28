@@ -12,7 +12,7 @@ import shutil
 import os
 
 app = FastAPI()
-redis = Redis(host='localhost', port=6379, db=0)
+redis = Redis(host='redis', port=6379, db=0)
 
 ALLOWED_EXTENSIONS = {"jpg", "jpeg", "png"}
 upload_temp_dir = "upload_temp"
@@ -57,4 +57,4 @@ async def upload_image(file: UploadFile = File(...)):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)

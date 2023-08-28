@@ -12,6 +12,8 @@ pytesseract = "^0.3.10"
 fastapi = "^0.101.1"
 uvicorn = "^0.23.2"
 redis = "^5.0.0"
+dynaconf = "^3.2.1"
+python-multipart = "^0.0.6"
 
 
 [build-system]

@@ -1,6 +1,7 @@
 import re
 
 from config import patterns
+from controller import check_db
 from validators.credit_card_validator import luhn_check
 from validators.id_validator import IsValidID
 from validators.number_validator import IsValidNumber
@@ -98,10 +99,24 @@ def find_credentials(text: str) -> dict:
         if matches:
             results.extend(matches)
 
-    response = {
-        "content": text,
-        "status": "successful",
-        "findings": results
-    }
+    found_list = []
+    for item in results:
+        found_stats = check_db(item['value'])
+        found_list.append(found_stats)
+
+    if any(found_list):
+        response = {
+            "content": text,
+            "status": "successful",
+            "findings": results,
+            "db_status": "TRUE"
+        }
+    else:
+        response = {
+            "content": text,
+            "status": "successful",
+            "findings": results,
+            "db_status": "False"
+        }
 
     return response

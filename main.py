@@ -30,7 +30,7 @@ async def upload_image(file: UploadFile = File(...)):
     :return: Response
     """
     if not allowed_file(file.filename):
-        raise HTTPException(status_code=400, detail="Bad request. Wrong file format.")
+        return JSONResponse(content={"status": "bad request. wrong file format."}, status_code=400)
 
     image_path = os.path.join(upload_temp_dir, file.filename)
     with open(image_path, "wb") as image_file:

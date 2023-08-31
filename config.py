@@ -19,5 +19,6 @@ patterns = {
     "SHA1-HASH": r'\b[a-fA-F0-9]{40}\b',
     "SHA256-HASH": r'\b[a-fA-F0-9]{64}\b',
     "COMBOLIST": r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+[*:][^\s]+',
+    "PHONE_NUMBER2": r'\+?\d{2,3}\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}',
 }
 
